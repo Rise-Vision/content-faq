@@ -1,0 +1,17 @@
+machine:
+  node:
+   version: 5.0.0
+dependencies:
+  pre:
+    - npm install -g gulp
+  post:
+    - git config --global user.email "jenkins@risevision.com"
+    - git config --global user.name "jenkins-rise"
+deployment:
+  production:
+    branch: master
+    commands:
+      - echo build and deploy faq to gh-page
+      - npm run ci-build-faq
+      - npm run ci-deploy-faq
+
