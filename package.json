@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp build",
-    "ci-build-demo": "gulp build-faq",
-    "ci-deploy-demo": "gulp deploy-faq --clean"
+    "ci-build-faq": "gulp build-faq",
+    "ci-deploy-faq": "gulp deploy-faq --clean"
   },
   "repository": {
     "type": "git",
