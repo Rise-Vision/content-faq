@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gulp Markdown Docs</title>
+  <style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-list .hljs-keyword,
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.hljs-name {
+  color: #008080;
+}
+
+.hljs-regexp {
+  color: #009926;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+
+.hljs-built_in {
+  color: #0086b3;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.diff .hljs-change {
+  background: #0086b3;
+}
+
+.hljs-chunk {
+  color: #aaa;
+}
+</style><style>body {
+  margin-left: 35vw;
+  font-family: sans-serif;
+}
+pre {
+  /* matches solarized_dark */
+  background: #002b36;
+  color: #839496;
+  padding: 1em;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.doc-nav {
+  position: fixed;
+  width: 32vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+.doc-nav a {
+  text-decoration: none;
+}
+.doc-nav a:hover {
+  text-decoration: underline;
+}
+.doc-nav-group {
+  list-style: none;
+  padding: 0;
+}
+.doc-nav-group-header {
+  display: block;
+  padding: 0.5em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.doc-nav-group-header,
+.doc-nav-group-header a:active,
+.doc-nav-group-header a:visited {
+  color: #212121;
+}
+.doc-nav-item {
+  padding: 0.5em 0 0.5em 1.5em;
+}
+.doc-nav-item a:active,
+.doc-nav-item a:visited {
+  color: #454545;
+}
+.doc-section-header {
+  font-size: 1.7em;
+  border-bottom: 1px solid #839496;
+  padding-bottom: 0.5em;
+}
+.doc-article {
+  padding-bottom: 4em;
+  display: block;
+}
+.doc-article h1 {
+  font-size: 1.6em;
+}
+.doc-article + .doc-article {
+  padding-top: 3em;
+  border-top: 1px solid #323232;
+}</style></head>
+  <body>
+    <section class="doc-nav"><ul class="doc-nav-group"><li class="doc-nav-item"><a href="#risecache">Rise Cache</a></li></ul></section>
+    <section class="doc-content"><section class="doc-section"><article class="doc-article"><a class="doc-nav-anchor" name="risecache"></a><h1 id="rise-cache">Rise Cache</h1>
+<p><a href="https://github.com/Rise-Vision/rise-cache-v2">Rise Cache</a> stores images and videos used in a Presentation to disk. We do this to prevent files from being downloaded repeatedly from the Server they are hosted on (e.g., Rise Storage), and make those files available offline.</p>
+<p>There is no need to manually install Rise Cache as it is bundled with the Rise Vision Installer and auto starts with Rise Player.</p>
+<p>If you run into a problem using Rise Cache <a href="https://github.com/Rise-Vision/rise-cache-v2/issues/new">log a new issue</a>.</p>
+<h2 id="where-does-rise-cache-save-files-">Where does Rise Cache save files?</h2>
+<p>A file in the process of being downloaded will be stored in <code>/rvplayer/RiseCache/download</code>. Once the download is finished the file is moved to <code>/rvplayer/RiseCache/cache</code></p>
+<p><em>Note: File names are base encoded to prevent issues that could occur where two files (from different Servers) have the same name.</em></p>
+<h2 id="how-often-are-files-updated-">How often are files updated?</h2>
+<p>Rise Cache will check for new file versions once every 20 minutes.</p>
+<p>Rise Cache uses <code>etag</code> to determine if a newer file version by comparing the value of <code>etag</code> for the file it holds against the <code>etag</code> value the Server holds.</p>
+<p>If the <code>etag</code> values are different Rise Cache will download the file again. If the <code>etag</code> values are the same, Rise Cache will not download the file and continue serving the version it already has.</p>
+<p>If <code>etag</code> is not available, Rise Cache will follow the same process using <code>last-modified</code>.</p>
+<p>If for whatever reason neiter <code>etag</code> or <code>last-modified</code> is available - Rise Cache will never download the file again unless it is deleted from disk.</p>
+<h2 id="how-can-i-see-the-etag-or-last-modified-of-a-file-">How can I see the <code>etag</code> or <code>last-modified</code> of a file?</h2>
+<p>Open Chrome Dev Tools and select the Network tab. Find the request for the file. One or both values will be shown in the Response Headers.</p>
+<h2 id="how-often-are-inactive-files-removed-">How often are inactive files removed?</h2>
+<p>On startup a clean up job is ran to identify all files that have not been used in the last 7 days. Files matching the criteria are deleted.</p>
+<h2 id="what-type-of-request-does-rise-cache-support-">What type of request does Rise Cache support?</h2>
+<table>
+<thead>
+<tr>
+<th>Request Type</th>
+<th>URL    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get Version</td>
+<td><code>http://localhost:9494/</code></td>
+</tr>
+<tr>
+<td>Get File</td>
+<td><code>http://localhost:9494/files?url=</code></td>
+</tr>
+<tr>
+<td>Get Metadata</td>
+<td><code>http://localhost:9494/metadata?url=</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: URL&apos;s above will fail if Rise Cache is not running on the machine the request is made from.</em></p>
+<h3 id="get-version-overview">Get Version Overview</h3>
+<p>The Get Version URL will can be used to confirm Rise Cache is running and the version of Rise Cache running. A response similar to the below will be provided</p>
+<pre><code>{&quot;<span class="hljs-attribute">name</span>&quot;:<span class="hljs-value"><span class="hljs-string">&quot;rise-cache-v2&quot;</span></span>,&quot;<span class="hljs-attribute">version</span>&quot;:<span class="hljs-value"><span class="hljs-string">&quot;1.0.0&quot;</span></span>}
+</code></pre><p>If you do not get this response, Rise Cache is not running.</p>
+<h3 id="get-file-overview">Get File Overview</h3>
+<p>To request a file from Rise Cache append the url of the file you want to the the <code>Get File</code> url.</p>
+<p>Rise Cache will respond with a 202 until the file is fully downloaded.</p>
+<h3 id="get-metadata-overview">Get Metadata Overview</h3>
+<p>To get the metadata of a file or folder on Rise Storage append the character encoded URL to the <code>Get Metadata</code> URL</p>
+<p>Character encoded URL for a Folder: <code>https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId={company_id}%26folder={folder_name}</code></p>
+<p>Character encoded URL for a File: <code>https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId={company_id}%26file={file_name}</code></p>
+<h3 id="how-does-rise-cache-update-to-a-new-version-">How does Rise Cache update to a new version?</h3>
+<p>Rise Cache is bundled with Rise Vision Installer. The version of Rise Cache included with the installer is determined by the version number specified in the package.json file of <a href="https://github.com/Rise-Vision/rise-launcher-electron">rise-launcher-electron</a></p>
+<ol>
+<li>Merge a new version of rise cache to Master</li>
+<li>Create a new branch called staging/my-feature-name from the this installer branch rise-cache-test</li>
+<li>Changed the rise-cache-v2 version on the package.json</li>
+<li>Commit and push.</li>
+<li>Wait the build finishes on CCI and check what is the version(date and time)</li>
+<li>Get the installer from cloud storage. A folder with the version of the built installer will be there.</li>
+</ol>
+</article></section></section>
+  </body>
+
