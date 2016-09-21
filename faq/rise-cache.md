@@ -1,6 +1,10 @@
-[Table of Contents](../README.md)
-
 ---
+label: Rise Cache
+id: risecache
+categorySlug:
+categoryLabel:
+categoryRank:
+documentRank: 1
 
 # Rise Cache
 [Rise Cache](https://github.com/Rise-Vision/rise-cache-v2) stores images and videos used in a Presentation to disk. We do this to prevent files from being downloaded repeatedly from the Server they are hosted on (e.g., Rise Storage), and make those files available offline.
