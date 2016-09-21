@@ -4,9 +4,6 @@ machine:
 dependencies:
   pre:
     - npm install -g gulp
-  post:
-    - git config --global user.email "jenkins@risevision.com"
-    - git config --global user.name "jenkins-rise"
 deployment:
   production:
     branch: master
